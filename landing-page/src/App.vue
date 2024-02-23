@@ -1,6 +1,5 @@
 <template>
-  <div class="lg:px-64 py-0.5 sm:px-0">
-    <Navbar/>
+  <div>
     <router-view/>
 </div>
 </template>
