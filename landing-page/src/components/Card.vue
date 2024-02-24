@@ -1,8 +1,8 @@
 <template>
     <div class="product">
-        <div class="product-inner">
+        <div :class="'product-inner ' + product.color">
             <div class="product-text-wrap">
-                <h2 class="bg-text">{{ product.bg-text }}</h2>
+                <h2 class="bg-text">{{ product.bgText }}</h2>
             </div>
             <div class="product-image-wrap">
                 <img :src="product.src" class="image"/>
@@ -18,9 +18,34 @@
 <script>
 export default{
     name: 'card',
-    props: ['card']
+    props: ['product']
 }
 </script>
 
 <style>
+    .product{
+        flex: 1 1 33.333%;
+        width: 100%;
+        padding: 25px;
+    }
+
+    .product-inner {
+        position: relative;
+        padding: 25px;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+    }
+    .product-inner.green {
+        background-image: linear-gradient(to bottom right, #24D484, #116432);
+    }
+    .product-inner.red {
+        background-image: linear-gradient(to bottom right, #24D484, #116432);
+    }
+    .product-inner.blue {
+        background-image: linear-gradient(to bottom left, #24D484, #2474C4 70%);
+    }
+    .product-image-wrap .image {
+        width: 100%;
+
+    }
+
 </style>

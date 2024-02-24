@@ -1,12 +1,12 @@
 <template>
-  <div class="lg:px-64 py-0.5 sm:px-0 bg-emerald-400">
+  <div class="lg:px-64 py-0.5 sm:px-0" id="bg-first">
     <Navbar/>   
   <section>
     <div class="pt-10 md:pt-40 flex justify-around items-center bg-emerald-400 md:bg-white">
       <div class="max-w-lg w-full px-4 md:px-0">
         <div class="grid gap-4">
           <span class="text-red-500 font-bold text-center md:text-left">Texto exemplo muito legal</span>
-          <span class="font-bold text-4xl text-center md:text-left md:text-6xl">Psicopedagodia muito boa!</span>
+          <span class="font-bold text-4xl text-center md:text-left text-azul-claro md:text-6xl">Psicopedagodia muito boa!</span>
           <div>
             <span class="text-purple-40 md:text-left">
               Temos o melhor atendimento da regiao serio mesmo
@@ -39,9 +39,9 @@
     </div>
   </section>
   </div>
-  <div class="lg:px-64 py-0.5 sm:px-0 md:bg-black">
+  <div class="lg:px-64 py-0.5 sm:px-0 md:bg-black" style="background-color: #F5F5F5;">
     <section>
-    <div class="md:pt-40 pt-28 flex justify-around items-center bg-emerald-100 md:bg-white">
+    <div class="md:pt-40 pt-28 flex justify-around items-center bg-emerald-100 md:cinza-claro">
       <div class="max-w-lg w-full px-4 md:px-0 text-center">
         <div class="grid gap-4">
           <span class="text-red-500 font-bold text-center md:text-center">Texto exemplo muito legal</span>
@@ -52,8 +52,12 @@
             </span>
           </div>
         </div>
-        <div class="flex items-center justify-center space-x-6 pt-4">
-          {{ product.title }}
+        <div class="flex items-center justify-center space-x-6 pt-4 m-0">
+          <Card 
+            v-for="product in products"
+            :key="product.color"
+            :product="product"
+          />
         </div>
       </div>
     </div>
@@ -65,31 +69,33 @@
 
 <script>
 import Navbar from '../components/Navbar.vue';
+import Card from '../components/Card.vue';
 export default {
   name: 'Home',
   components: {
-    Navbar
+    Navbar,
+    Card
   },
-data() {
+  data() {
   return {
     products: [
       {
         title: 'Diversão',
         color: 'green',
-        bgText 'DIVERSÃO',
-        src: require('./')
+        bgText: 'DIVERSÃO',
+        //src: require('./caminho/para/imagem1.jpg')
       },
       {
         title: 'Diversão',
         color: 'blue',
-        bgText 'DIVERSÃO',
-        src: require('./')
+        bgText: 'DIVERSÃO',
+        //src: require('./caminho/para/imagem2.jpg')
       },
       {
         title: 'Diversão',
         color: 'red',
-        bgText 'DIVERSÃO',
-        src: require('./')
+        bgText: 'DIVERSÃO',
+        //src: require('./caminho/para/imagem3.jpg')
       }
     ]
   }
@@ -98,6 +104,9 @@ data() {
 </script>
   
 <style scoped>
+#bg-first {
+  background-color: white;
+}
 
 @media (min-width: 768px) {
   .custom-shape-divider-top-1708699010 {
@@ -124,7 +133,7 @@ data() {
 }
 
 .custom-shape-divider-top-1708699010 .shape-fill {
-    fill: #34d399;
+    fill: white;
 }
 .custom-shape-divider-top-1708643060 {
     position: absolute;
