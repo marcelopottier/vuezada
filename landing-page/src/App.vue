@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <router-view/>
+  <div class="roboto-regular" id="app">
+  <router-view/>
 </div>
 </template>
 
@@ -16,5 +16,9 @@ export default {
 </script>
 
 <style>
-/* Adicione estilos conforme necessário */
+  .roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 </style>

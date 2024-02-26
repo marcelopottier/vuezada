@@ -3,10 +3,14 @@ export default {
   content: ['index.html', './src/**/*.{vue,js,ts,jsx,tsx}',],
   theme: {
     colors: {
-      'verde-agua': '#B0E5D6',
-      'azul-claro': '#6CB2EB',
-      'cinza-claro': '#F5F5F5',
-      'laranja-suave': '#F6AD55'
+      //#445E93
+      'azul-alice': '#DBE9EE',
+      'cinza-claro': '#445E93',
+      'laranja-suave': '#F6AD55',
+      'azul-escuro': '#FFD9AD',
+      'white': '#FFFFFF',
+      'azul': '#90cbe6',
+      'cinza': '#E5EEF0'
     },
     extend: {},
   },
